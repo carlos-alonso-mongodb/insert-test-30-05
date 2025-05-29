@@ -1,0 +1,22 @@
+{
+  "role": "secondary", 
+  "codes_refresh_interval": 60,
+  "source": {
+    "connection_string": "mongodb+srv://francesc:francesc@clustertestingest.0asff.mongodb.net/?retryWrites=true&w=majority&appName=ClusterTestIngest",
+    "database_name": "CatSalutCDR",
+    "collection_name": "samples"
+  },
+  "target": {
+    "connection_string": "mongodb+srv://francesc:francesc@clustertestingest.0asff.mongodb.net/?retryWrites=true&w=majority&appName=ClusterTestIngest",
+    "database_name": "CatSalutCDR",
+    "compositions_collection": "finalCompositions",
+    "search_collection": "finalSearch",
+    "codes_collection": "_codes",
+    "shortcuts_collection": "_shortcuts"
+  },
+    "clean_collections": false,
+    "reset_used_flags": false,
+    "batch_size_reset": 2500,
+    "patient_limit": 80000,
+    "replication_factor": 200
+  }

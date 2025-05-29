@@ -1,0 +1,116 @@
+{
+  "templates": {
+    "openEHR-EHR-COMPOSITION.vaccination_list.v0": {
+      "rules": [
+        {
+          "when": {
+            "ani": "at0014",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.vaccination_list.v0",
+              "openEHR-EHR-CLUSTER.admin_salut.v0",
+              "at0007"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.df.cs",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "openEHR-EHR-ACTION.medication.v1",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.vaccination_list.v0",
+              "openEHR-EHR-SECTION.immunisation_list.v0"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.T",
+            "d.time.v",
+            "d.op.pf.ids.id",
+            "a"
+          ]
+        }
+      ]
+    },
+    "openEHR-EHR-COMPOSITION.report-result.v1": {
+      "rules": [
+        {
+          "when": {
+            "ani": "openEHR-EHR-COMPOSITION.report-result.v1",
+            "ancestors": []
+          },
+          "copy": [
+            "d.T",
+            "d.cx.st.v"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0001",
+            "ancestors": [
+              "at0001",
+              "openEHR-EHR-CLUSTER.admin_salut.v0"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.v",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0011",
+            "ancestors": [
+              "at0001",
+              "openEHR-EHR-CLUSTER.admin_salut.v0",
+              "at0005"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.df.cs",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0024",
+            "ancestors": [
+              "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+              "at0001",
+              "at0002",
+              "at0003",
+              "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.df.cs",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0001",
+            "ancestors": [
+              "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+              "at0001",
+              "at0002",
+              "at0003",
+              "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.v",
+            "a"
+          ]
+        }
+      ]
+    }
+  }
+}

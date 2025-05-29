@@ -1,0 +1,192 @@
+{
+  "templates": {
+    "openEHR-EHR-COMPOSITION.vaccination_list.v0": {
+      "rules": [
+        {
+          "when": {
+            "ani": "at0014",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.vaccination_list.v0",
+              "openEHR-EHR-CLUSTER.admin_salut.v0",
+              "at0007"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.df.cs",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "openEHR-EHR-ACTION.medication.v1",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.vaccination_list.v0",
+              "openEHR-EHR-SECTION.immunisation_list.v0"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.T",
+            "d.time.v",
+            "d.op.pf.ids.id",
+            "a"
+          ]
+        }
+      ]
+    },
+    "openEHR-EHR-COMPOSITION.report-result.v1": {
+      "rules": [
+        {
+          "when": {
+            "ani": "openEHR-EHR-COMPOSITION.report-result.v1",
+            "ancestors": []
+          },
+          "copy": [
+            "d.T",
+            "d.cx.st.v"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0001",
+            "ancestors": [
+              "at0001",
+              "openEHR-EHR-CLUSTER.admin_salut.v0"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.v",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0011",
+            "ancestors": [
+              "at0001",
+              "openEHR-EHR-CLUSTER.admin_salut.v0",
+              "at0005"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.df.cs",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0024",
+            "ancestors": [
+              "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+              "at0001",
+              "at0002",
+              "at0003",
+              "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.df.cs",
+            "a"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0001",
+            "ancestors": [
+              "openEHR-EHR-OBSERVATION.laboratory_test_result.v1",
+              "at0001",
+              "at0002",
+              "at0003",
+              "openEHR-EHR-CLUSTER.laboratory_test_analyte.v1"
+            ]
+          },
+          "copy": [
+            "d.ani",
+            "d.v.v",
+            "a"
+          ]
+        }
+      ]
+    },
+    "openEHR-EHR-COMPOSITION.hce_clinical_variables.v1": {
+      "rules": [
+        {
+          "when": {
+            "ani": "openEHR-EHR-COMPOSITION.hce_clinical_variables.v1",
+            "ancestors": []
+          },
+          "copy": [
+            "d.T",
+            "d.cx.st.v"
+          ]
+        },
+        {
+          "when": {
+            "ani": "openEHR-EHR-OBSERVATION.clinical_attribute.v0",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.hce_clinical_variables.v1"
+            ]
+          },
+          "copy": [
+            "d.ani",                             
+            "d.T",
+            "d.data.any_event.time.v",
+            "d.data.any_event.data.v",
+            "d.data.any_event.data.units",
+            "d.data.any_event.data.df.cs",
+            "a"
+          ]
+        }
+      ]
+    },
+    "openEHR-EHR-COMPOSITION.report.v1": {
+      "rules": [
+        {
+          "when": {
+            "ani": "openEHR-EHR-COMPOSITION.report.v1",
+            "ancestors": []
+          },
+          "copy": [
+            "d.T",
+            "d.cx.st.v"
+          ]
+        },
+        {
+          "when": {
+            "ani": "at0023",                        
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.report.v1",
+              "openEHR-EHR-CLUSTER.admin_salut.v0"
+            ]
+          },
+          "copy": [ "d.ani", "d.v.v", "a" ]
+        },
+        {
+          "when": {
+            "ani": "at0014",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.report.v1",
+              "openEHR-EHR-CLUSTER.admin_salut.v0"
+            ]
+          },
+          "copy": [ "d.ani", "d.v.df.cs", "a" ]
+        },
+        {
+          "when": {
+            "ani": "at0020",
+            "ancestors": [
+              "openEHR-EHR-COMPOSITION.report.v1",
+              "openEHR-EHR-EVALUATION.problem_diagnosis.v1"
+            ]
+          },
+          "copy": [ "d.ani", "d.v.df.cs", "d.v.v", "a" ]
+        }
+      ]
+    }
+  }
+}
+
